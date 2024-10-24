@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handsontable with Formulas</title>
+    <!-- Handsontable CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable@11.1.0/dist/handsontable.full.min.css">
+    <!-- Hyperformula for formulas -->
+    <script src="https://cdn.jsdelivr.net/npm/hyperformula@1.2.0/dist/hyperformula.full.min.js"></script>
+    <!-- Handsontable JS -->
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@11.1.0/dist/handsontable.full.min.js"></script>
+</head>
+
+<body>
+
+    <div id="spreadsheet" style="width: 1000px; height: 600px;"></div>
+
+    <script>
+        // Create an empty 50x10 dataset
+        var rows = 50;
+        var cols = 10;
+        var data = [];
+
+        // Initialize the dataset with empty cells
+        for (var i = 0; i < rows; i++) {
+            var row = [];
+            for (var j = 0; j < cols; j++) {
+                row.push(''); // Empty value for each cell
+            }
+            data.push(row);
+        }
+
+        // Initialize HyperFormula (for formula support)
+        const hyperformulaInstance = HyperFormula.buildEmpty();
+
+        // Initialize Handsontable
+        const container = document.getElementById('spreadsheet');
+        const hot = new Handsontable(container, {
+            data: data,
+            rowHeaders: true,
+            colHeaders: true,
+            formulas: {
+                engine: hyperformulaInstance, // Attach Hyperformula engine
+            },
+            contextMenu: true, // Enable right-click context menu
+            manualRowResize: true, // Allow row resizing
+            manualColumnResize: true, // Allow column resizing
+            allowInsertRow: true, // Allow inserting rows
+            allowInsertColumn: true, // Allow inserting columns
+            stretchH: 'all', // Stretch columns to fill the container horizontally
+            height: 600, // Set height for scrolling
+            width: 1000, // Set width for the container
+            licenseKey: 'non-commercial-and-evaluation', // Free usage license
+        });
+
+    </script>
+
+</body>
+
+</html>
