@@ -5,3 +5,4 @@ Whitelist
 ---------
 https://mfedenia.github.io/ssheet/ssheet.html
 https://cdn.jsdelivr.net/npm/handsontable@11.1.0/dist/handsontable.full.min.css
+https://cdn.jsdelivr.net/npm/hyperformula@1.2.0/dist/hyperformula.full.min.js
