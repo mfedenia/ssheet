@@ -1,4 +1,7 @@
 <iframe src="https://mfedenia.github.io/ssheet/ssheet.html" width="100%" 
 height="576" frameborder="0"></iframe>
 
-
+Whitelist
+---------
+https://mfedenia.github.io/ssheet/ssheet.html
+https://cdn.jsdelivr.net/npm/handsontable@11.1.0/dist/handsontable.full.min.css
